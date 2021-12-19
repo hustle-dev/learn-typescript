@@ -1,20 +1,4 @@
-interface PhoneNumberDictionary {
-  [phone: string]: {
-    num: number;
-  };
-}
-
-interface Contact {
-  name: string;
-  address: string;
-  phones: PhoneNumberDictionary;
-}
-
-enum PhoneType {
-  Home = 'home',
-  Office = 'office',
-  Studio = 'studio',
-}
+import { Contact, PhoneType } from './types';
 
 // api
 // TODO: 아래 함수의 반환 타입을 지정해보세요.
@@ -85,9 +69,7 @@ class AddressBook {
   }
 
   findContactByPhone(phoneNumber: number, phoneType: PhoneType): Contact[] {
-    return this.contacts.filter(
-      contact => contact.phones[phoneType].num === phoneNumber
-    );
+    return this.contacts.filter(contact => contact.phones[phoneType].num === phoneNumber);
   }
 
   addContact(contact: Contact): void {
@@ -105,6 +87,6 @@ class AddressBook {
 }
 
 var div = document.querySelector('div') as HTMLDivElement;
-div.innerText
+div.innerText;
 
 new AddressBook();
