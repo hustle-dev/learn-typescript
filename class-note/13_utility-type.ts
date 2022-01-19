@@ -46,22 +46,22 @@ interface UserProfile {
 // }
 
 // #1
-type UserProfileUpdate = {
-  username?: UserProfile['username'];
-  email?: UserProfile['email'];
-  profilePhotoUrl?: UserProfile['profilePhotoUrl'];
-};
+// type UserProfileUpdate = {
+//   username?: UserProfile['username'];
+//   email?: UserProfile['email'];
+//   profilePhotoUrl?: UserProfile['profilePhotoUrl'];
+// };
 
 // #2
-type UserProfileUpdate = {
-  [p in 'username' | 'email' | 'profilePhotoUrl']?: UserProfile[p];
-};
-type UserProfileKeys = keyof UserProfile;
+// type UserProfileUpdate = {
+//   [p in 'username' | 'email' | 'profilePhotoUrl']?: UserProfile[p];
+// };
+// type UserProfileKeys = keyof UserProfile;
 
-// #3
-type UserProfileUpdate = {
-  [p in keyof UserProfile]?: UserProfile[p];
-};
+// // #3
+// type UserProfileUpdate = {
+//   [p in keyof UserProfile]?: UserProfile[p];
+// };
 
 // #4
 type Subset<T> = {
